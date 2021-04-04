@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form method="POST" action="/users/update">
+ID<input type="text" name="t1" value="<%= data[0]._id %>"><br><br>
+NAME<input type="text" name="t2" value="<%= data[0].name %>"><br><br>
+Email<input type="text" name="t3" value="<%= data[0].email %>"><br><br>
+password<input type="text" name="t4" value="<%= data[0].password %>"><br><br>
+<input type="submit" value="update">    
+</form>    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td{
+            border:1px solid black;
+            width:70%;
+       margin-left:100px;
+       padding: 10px;     
+        }
+    </style>
+</head>
+<body>
+  <table>
+      <thead>
+          <tr>
+              <th> ID </th>
+              <th> NAME </th>
+              <th> EMAIL </th>
+          </tr>
+      </thead>
+      <tbody>
+          <% if(data.length>0) {%>
+        <% data.forEach(function(row){ %>
+        <tr>
+            <td> <%= row._id %> </td>
+            <td> <%= row.name %> </td>
+            <td> <%= row.email %> </td>
+            <td><a href="/users/edit/?id=<%= row._id %>">EDIT</a></td>    
+            <td><a href="/users/del/?id=<%= row._id %>">delete</a></td>             
+            
+        </tr>
+    <%})} else {%>
+    <tr>
+        <td colspan="6"> no record found </td>
+    </tr>
+<% } %>
+      </tbody>
+  </table>  
+</body>
+</html>
